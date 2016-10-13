@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>UIKIT</title>
+	<link rel="stylesheet" type="text/css" href="css/uikit.css">
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/uikit.js"></script>
+
+
+</head>
+<style type="text/css">
+body{
+	padding:30px;
+	box-sizing: border-box;
+
+}
+code{
+	border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    background: #fafafa;
+    white-space: nowrap;
+    padding: 0 4px;
+}
+.red{
+	color:red;
+	font-size:40px;
+	font-weight: bold;
+	background-color: pink;
+
+}
+
+</style>
+<body>
+
+<ul class="uk-tab uk-width-medium-7-10 " data-uk-tab="">
+                                    <li class="" aria-expanded="false"><a href="index.html">布局类组件</a></li>
+                                    <li aria-expanded="true" class="uk-active"><a href="#">导航类组件</a></li>
+                                    <li class="" aria-expanded="false"><a href="#">页面元素</a></li>
+                                    <li class="" aria-expanded="false"><a href="#">常用组件</a></li>
+                                    <li class="" aria-expanded="false"><a href="#">JAVASCRIPT组件</a></li>
+                                    <li class="uk-disabled"><a href="#">UIKIT</a></li>
+                                    <li class="uk-tab-responsive uk-active uk-hidden" aria-haspopup="true" aria-expanded="false">
+                                       <a>Item</a>
+                                       <div class="uk-dropdown uk-dropdown-small"><ul class="uk-nav uk-nav-dropdown"></ul><div></div></div>
+                                    </li>
+</ul>
+		<h1 class="uk-article-title">导航菜单</h1>
+		<p class="uk-article-lead">为列表导航菜单定义不同的风格样式。</p>
+		<h2 id="usage"><a href="#usage" class="uk-link-reset">用法</a></h2>
+		<p>使用这个组件，添加 <code>.uk-nav</code> 类到一个 <code>&lt;ul&gt;</code> 元素中。使用 <code>&lt;a&gt;</code> 元素作为列表中的菜单项。要对一个菜单项应用选中状态的效果，添加 <code>.uk-active</code> 类即可。</p>
+		<p><span class="uk-badge uk-badge-info">注意</span> 默认情况下，导航菜单没有任何样式。这就是为什么要添加一些具有样式的修饰类，这是很重要的，在例子中我们使用了 <code>.uk-nav-side</code> 类。</p>
+         <div class="uk-width-medium-1-3">
+                                <ul class="uk-nav uk-nav-side">
+                                    <li class="uk-active"><a href="#">Active</a></li>
+                                    <li><a href="#">Item</a></li>
+                                    <li><a href="#">Item</a></li>
+                                </ul>
+
+        </div>
+        <hr>
+        <h3>嵌套导航</h3>
+        <p>你可以很容易向菜单导航添加任意数量的 <code>&lt;ul&gt;</code> 元素。</p>
+        <div class="uk-overflow-container">
+                                <table class="uk-table uk-text-nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th>Class</th>
+                                            <th>描述</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>.uk-nav-sub</code></td>
+                                            <td>在第一个嵌套的 <code>&lt;ul&gt;</code> 中添加这个类，使其拥有最佳的间距。</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>.uk-parent</code></td>
+                                            <td>添加这个类来表示一个父菜单项。</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>.uk-nav-parent-icon</code></td>
+                                            <td>给导航菜单添加这个类，可以使父菜单项增加图标。</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+        </div>
+        <hr>
+        <h3>手风琴</h3>
+        <p>默认情况下，子菜单项总是可见的。若要应用手风琴效果，只需给主 <code>&lt;ul&gt;</code> 元素添加 <code>data-uk-nav</code> 属性。当点击一个父菜单项时，会关闭已经展开的菜单项，每次只允许展开一个嵌套的菜单。若要避免这种情况，只需附加 <code>{multiple:true}</code> 到 data 属性。</p>
+
+        <div class="uk-grid" data-uk-grid-margin="">
+                                <div class="uk-width-medium-1-2 uk-row-first">
+                                    <p><code>data-uk-nav</code></p>
+
+                                    <ul class="uk-nav uk-nav-side uk-nav-parent-icon uk-width-medium-2-3" data-uk-nav="">
+                                        <li class="uk-active"><a href="">Active</a></li>
+                                        <li><a href="">Item</a></li>
+
+                                        <li class="uk-parent" aria-expanded="false">
+                                            <a href="#" class="ppopl">Parent</a>
+                                            <div style="overflow: hidden; position: relative; height: 0px;" class="uk-hidden"><ul class="uk-nav-sub">
+                                                <li><a href="">Sub item</a></li>
+                                                <li><a href="">Sub item</a>
+                                                    <ul>
+                                                        <li><a href="">Sub item</a></li>
+                                                        <li><a href="">Sub item</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul></div>
+                                        </li>
+
+                                        <li class="uk-parent" aria-expanded="false">
+                                            <a href="#" class="ppopl">Parent</a>
+                                            <div style="overflow:hidden;height:0;position:relative;" class="uk-hidden"><ul class="uk-nav-sub">
+                                                <li><a href="">Sub item</a></li>
+                                                <li><a href="">Sub item</a></li>
+                                            </ul></div>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                                <div class="uk-width-medium-1-2">
+
+                                    <p><code>data-uk-nav="{multiple:true}"</code></p>
+
+                                    <ul class="uk-nav uk-nav-side uk-nav-parent-icon uk-width-medium-2-3" data-uk-nav="{multiple:true}">
+                                        <li class="uk-active"><a href="">Active</a></li>
+                                        <li><a href="">Item</a></li>
+
+                                        <li class="uk-parent" aria-expanded="false">
+                                            <a href="#" class="ppopl">Parent</a>
+                                            <div style="overflow: hidden; position: relative; height: 0px;" class="uk-hidden"><ul class="uk-nav-sub">
+                                                <li><a href="">Sub item</a></li>
+                                                <li><a href="">Sub item</a>
+                                                    <ul>
+                                                        <li><a href="">Sub item</a></li>
+                                                        <li><a href="">Sub item</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul></div>
+                                        </li>
+
+                                        <li class="uk-parent" aria-expanded="false">
+                                            <a href="#" class="ppopl">Parent</a>
+                                            <div style="overflow: hidden; position: relative; height: 0px;" class="uk-hidden"><ul class="uk-nav-sub">
+                                                <li><a href="">Sub item</a></li>
+                                                <li><a href="">Sub item</a></li>
+                                            </ul></div>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+ <div class="red">未完成</div>
+ <h3>标题和分隔线</h3>
+ <p>为菜单项添加下面这些类中的一个，创建菜单项中的标题或分隔线。</p>
+ <div class="uk-overflow-container">
+                                <table class="uk-table uk-text-nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th>Class</th>
+                                            <th>描述</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>.uk-nav-header</code></td>
+                                            <td>添加这个类到一个 <code>&lt;li&gt;</code> 元素创建一个标题。</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>.uk-nav-divider</code></td>
+                                            <td>添加这个类到一个 <code>&lt;li&gt;</code> 元素，在单独的菜单项之间创建一个分割线。</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+       <div class="uk-width-medium-1-3">
+
+                                <div class="uk-panel uk-panel-box">
+
+                                    <h3 class="uk-panel-title">Nav side in panel</h3>
+
+                                    <ul class="uk-nav uk-nav-side uk-nav-parent-icon" data-uk-nav="">
+                                        <li class="uk-active"><a href="#">Active</a></li>
+
+                                        <li class="uk-parent uk-open" aria-expanded="true">
+                                            <a href="#" class="ppopl">Parent</a>
+                                            <div style="overflow: hidden; position: relative;" class=""><ul class="uk-nav-sub">
+                                                <li><a href="#">Sub item</a></li>
+                                                <li><a href="#">Sub item</a>
+                                                    <ul>
+                                                        <li><a href="#">Sub item</a></li>
+                                                        <li><a href="#">Sub item</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul></div>
+                                        </li>
+
+                                        <li class="uk-parent" aria-expanded="false">
+                                            <a href="#" class="ppopl">Parent</a>
+                                            <div style="overflow:hidden;height:0;position:relative;" class="uk-hidden"><ul class="uk-nav-sub">
+                                                <li><a href="#">Sub item</a></li>
+                                                <li><a href="#">Sub item</a></li>
+                                            </ul></div>
+                                        </li>
+
+                                        <li><a href="#">Item</a></li>
+
+                                        <li class="uk-nav-header">Header</li>
+                                        <li class="uk-parent"><a href="#" class="ppopl"><i class="uk-icon-star"></i> Parent</a></li>
+                                        <li><a href="#"><i class="uk-icon-twitter"></i> Item</a></li>
+                                        <li class="uk-nav-divider"></li>
+                                        <li><a href="#"><i class="uk-icon-rss"></i> Item</a></li>
+                                    </ul>
+
+                                </div>
+
+ </div>
+ <h3>下拉导航菜单</h3>
+ <p>添加 <code>.uk-nav-dropdown</code> 类，将导航菜单放置到一个 <a href="" title="Dropdown">下拉菜单组件</a> 中的默认下拉菜单中。</p>
+ <div class="uk-button-dropdown" data-uk-dropdown="" aria-haspopup="true" aria-expanded="false">
+                                <button class="uk-button">下拉菜单 <i class="uk-icon-caret-down"></i></button>
+
+                                <div class="uk-dropdown uk-dropdown-small uk-dropdown-bottom" style="top: 30px; left: 0px;">
+
+                                    <ul class="uk-nav uk-nav-dropdown">
+                                        <li><a href="#">Item</a></li>
+                                        <li><a href="#">Another item</a></li>
+                                        <li class="uk-nav-header">Header</li>
+                                        <li><a href="#">Item</a></li>
+                                        <li><a href="#">Another item</a></li>
+                                        <li class="uk-nav-divider"></li>
+                                        <li><a href="#">Separated item</a></li>
+                                    </ul>
+
+                                </div>
+
+</div>
+<h3>导航栏中的导航菜单</h3>
+<p>添加 <code>.uk-nav-navbar</code> 类，将导航菜单放置到一个 <a href="" title="Navbar">导航栏组件</a> 中的导航栏下拉菜单中。</p>
+<!-- 导航栏中的导航菜单 -->
+<nav class="uk-navbar">
+
+                                <ul class="uk-navbar-nav">
+                                    <li class="uk-parent" data-uk-dropdown="" aria-haspopup="true" aria-expanded="false">
+                                        <a href="">鼠标来这试试</a>
+
+                                        <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-top" style="top: -218px; left: 0px;">
+                                            <ul class="uk-nav uk-nav-navbar">
+                                                <li><a href="#">Item</a></li>
+                                                <li><a href="#">Another item</a></li>
+                                                <li class="uk-nav-header">Header</li>
+                                                <li><a href="#">Item</a></li>
+                                                <li><a href="#">Another item</a></li>
+                                                <li class="uk-nav-divider"></li>
+                                                <li><a href="#">Separated item</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </li>
+                                </ul>
+
+                            </nav>
+                            <!--  -->
+<button class="xc uk-button uk-panel uk-panel-box uk-panel-box-primary uk-width-1-2 uk-container-center uk-text-center" data-uk-offcanvas="{target:'#offcanvas-1'}">Off-canvas</button>
+<div id="offcanvas-1" class="uk-offcanvas uk-active xa" style="display:none"  aria-hidden="false">
+
+                                <div class="uk-offcanvas-bar uk-offcanvas-bar-show">
+
+                                    <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav="">
+                                        <li><a href="">Item</a></li>
+                                        <li class="uk-active"><a href="">Active</a></li>
+
+                                        <li class="uk-parent" aria-expanded="false">
+                                            <a href="#" class="ppopl">Parent</a>
+                                            <div style="overflow:hidden;height:0;position:relative;" class="uk-hidden"><ul class="uk-nav-sub">
+                                                <li><a href="">Sub item</a></li>
+                                                <li><a href="">Sub item</a>
+                                                    <ul>
+                                                        <li><a href="">Sub item</a></li>
+                                                        <li><a href="">Sub item</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul></div>
+                                        </li>
+
+                                        <li class="uk-parent" aria-expanded="false">
+                                            <a href="#" class="ppopl">Parent</a>
+                                            <div style="overflow:hidden;height:0;position:relative;" class="uk-hidden"><ul class="uk-nav-sub">
+                                                <li><a href="">Sub item</a></li>
+                                                <li><a href="">Sub item</a></li>
+                                            </ul></div>
+                                        </li>
+
+                                        <li><a href="">Item</a></li>
+
+                                        <li class="uk-nav-header">Header</li>
+                                        <li class="uk-parent"><a href="" class="ppopl"><i class="uk-icon-star"></i> Parent</a></li>
+                                        <li><a href=""><i class="uk-icon-twitter"></i> Item</a></li>
+                                        <li class="uk-nav-divider"></li>
+                                        <li><a href=""><i class="uk-icon-rss"></i> Item</a></li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+                            <!-- 导航栏 -->
+ <h1 class="uk-article-title">导航栏</h1>
+ <p class="uk-article-lead">为导航栏定义不同风格的样式。</p>
+ <h2 id="usage"><a href="#usage" class="uk-link-reset">用法</a></h2>
+ <p>导航栏组件包括导航栏本身及一个或多个导航菜单。</p>
+ <div class="uk-overflow-container">
+                                <table class="uk-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Class</th>
+                                            <th>描述</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>.uk-navbar</code></td>
+                                            <td>添加这个类到 <code>&lt;nav&gt;</code> 元素中，定义导航栏组件。</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>.uk-navbar-nav</code></td>
+                                            <td>添加这个类到 <code>&lt;ul&gt;</code> 元素来创建导航。使用 <code>&lt;a&gt;</code> 元素作为列表中的菜单项。</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>.uk-active</code></td>
+                                            <td>添加这个类到一个列表项中，对其应用选中的状态。</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>.uk-parent</code></td>
+                                            <td>添加这个类来表示一个父级菜单项。</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+<nav class="uk-navbar">
+
+                                <ul class="uk-navbar-nav">
+                                    <li class="uk-active"><a href="">Active</a></li>
+                                    <li><a href="">Item</a></li>
+                                    <li class="uk-parent" data-uk-dropdown="" aria-haspopup="true" aria-expanded="false">
+                                        <a href="">Parent</a>
+
+                                        <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-top" style="top: -218px; left: 0px;">
+                                            <ul class="uk-nav uk-nav-navbar">
+                                                <li><a href="#">Item</a></li>
+                                                <li><a href="#">Another item</a></li>
+                                                <li class="uk-nav-header">Header</li>
+                                                <li><a href="#">Item</a></li>
+                                                <li><a href="#">Another item</a></li>
+                                                <li class="uk-nav-divider"></li>
+                                                <li><a href="#">Separated item</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </li>
+                                </ul>
+
+</nav>
+<hr class="uk-article-divider">
+<hr>
+<h3>导航栏翻转</h3>
+<p>添加 <code>.uk-navbar-flip</code> 类到一个 <code>&lt;div&gt;</code> 元素中，将其进行分组并将导航项对齐到导航栏右侧。</p>
+<nav class="uk-navbar">
+
+                                <ul class="uk-navbar-nav">
+                                    <li class="uk-active"><a href="">Active</a></li>
+                                    <li><a href="">Item</a></li>
+                                    <li class="uk-parent" data-uk-dropdown="" aria-haspopup="true" aria-expanded="false">
+                                        <a href="">Parent</a>
+
+                                        <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-top" style="top: -218px; left: 0px;">
+                                            <ul class="uk-nav uk-nav-navbar">
+                                                <li><a href="#">Item</a></li>
+                                                <li><a href="#">Another item</a></li>
+                                                <li class="uk-nav-header">Header</li>
+                                                <li><a href="#">Item</a></li>
+                                                <li><a href="#">Another item</a></li>
+                                                <li class="uk-nav-divider"></li>
+                                                <li><a href="#">Separated item</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </li>
+                                </ul>
+
+                                <div class="uk-navbar-flip">
+
+                                    <ul class="uk-navbar-nav">
+                                        <li class="uk-parent" data-uk-dropdown="">
+                                            <a href="">Parent</a>
+
+                                            <div class="uk-dropdown uk-dropdown-navbar">
+                                                <ul class="uk-nav uk-nav-navbar">
+                                                    <li><a href="#">Item</a></li>
+                                                    <li><a href="#">Another item</a></li>
+                                                    <li class="uk-nav-header">Header</li>
+                                                    <li><a href="#">Item</a></li>
+                                                    <li><a href="#">Another item</a></li>
+                                                    <li class="uk-nav-divider"></li>
+                                                    <li><a href="#">Separated item</a></li>
+                                                </ul>
+                                            </div>
+
+                                        </li>
+                                        <li><a href="">Item</a></li>
+                                        <li class="uk-active"><a href="">Active</a></li>
+                                    </ul>
+
+                                </div>
+ </nav>
+
+<!-- 导航栏副标题 -->
+    <h3>导航栏副标题</h3>
+    <p>为列表项中的 <code>&lt;a&gt;</code> 元素添加 <code>.uk-navbar-nav-subtitle</code> 类来表示一个副标题。使用 <code>&lt;div&gt;</code> 元素作为副标题本身。</p>
+    <h2 id="content"><a href="#content" class="uk-link-reset">内容</a></h2>
+    <p>你还可以在导航栏中添加自定义的内容，如文本、图标、按钮、表单，甚至是一个拨动器。默认情况下，拨动器并没有附属 JavaScript。举例来说，可以为导航栏添加一个 <a href="#" title="Off-canvas component">抽屉组件</a> 。</p>
+<div class="uk-overflow-container">
+                                <table class="uk-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Class</th>
+                                            <th>描述</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>.uk-navbar-content</code></td>
+                                            <td>添加这个类到 <code>&lt;div&gt;</code> 元素中，使它作为一个自定义内容的容器。内容将被垂直居中。</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>.uk-navbar-brand</code></td>
+                                            <td>添加这个类到一个 <code>&lt;a&gt;</code> 或 <code>&lt;div&gt;</code> 元素中，来表示你的品牌。</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>.uk-navbar-center</code></td>
+                                            <td>添加这个类来居中你的导航栏内容或品牌。该元素必须为导航栏的最后一个子元素。</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>.uk-navbar-toggle</code></td>
+                                            <td>添加这个类到一个 <code>&lt;a&gt;</code> 或 <code>&lt;div&gt;</code> 元素中，创建一个作为拨动开关的图标。</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>.uk-navbar-toggle-alt</code></td>
+                                            <td>添加这个类来替换 拨动开关 默认的图标。</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+<h3>示例</h3>
+<div class="uk-margin">
+
+                                <nav class="uk-navbar">
+
+                                    <a class="uk-navbar-brand" href="#">Brand</a>
+
+                                    <ul class="uk-navbar-nav">
+                                        <li class="uk-parent uk-active" data-uk-dropdown="" aria-haspopup="true" aria-expanded="false">
+                                            <a href=""><i class="uk-icon-home"></i> Level1</a>
+
+                                            <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom" style="top: 40px; left: 0px;">
+                                                <ul class="uk-nav uk-nav-navbar">
+                                                    <li><a href="#">Item</a></li>
+                                                    <li><a href="#">Another item</a></li>
+                                                    <li class="uk-nav-header">Header</li>
+                                                    <li><a href="#">Item</a></li>
+                                                    <li><a href="#">Another item</a></li>
+                                                    <li class="uk-nav-divider"></li>
+                                                    <li><a href="#">Separated item</a></li>
+                                                </ul>
+                                            </div>
+
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="uk-navbar-content">Some <a href="#">link</a>.</div>
+
+                                    <div class="uk-navbar-content uk-hidden-small">
+                                        <form class="uk-form uk-margin-remove uk-display-inline-block">
+                                            <input type="text" placeholder="Search">
+                                            <button class="uk-button uk-button-primary">Submit</button>
+                                        </form>
+                                    </div>
+
+                                    <div class="uk-navbar-content uk-navbar-flip  uk-hidden-small">
+                                        <div class="uk-button-group">
+                                            <a class="uk-button uk-button-danger" href="#">Link</a>
+                                            <button class="uk-button uk-button-danger">Button</button>
+                                        </div>
+                                    </div>
+
+                                </nav>
+</div>
+<div class="uk-margin">
+
+                                <nav class="uk-navbar">
+
+                                    <ul class="uk-navbar-nav">
+                                        <li class="uk-active"><a href="">Active</a></li>
+                                        <li class="uk-hidden-small"><a href="">Item</a></li>
+                                        <li class="uk-parent" data-uk-dropdown="" aria-haspopup="true" aria-expanded="false">
+                                            <a href="">Parent</a>
+
+                                            <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-top" style="top: -218px; left: 0px;">
+                                                <ul class="uk-nav uk-nav-navbar">
+                                                    <li><a href="#">Item</a></li>
+                                                    <li><a href="#">Another item</a></li>
+                                                    <li class="uk-nav-header">Header</li>
+                                                    <li><a href="#">Item</a></li>
+                                                    <li><a href="#">Another item</a></li>
+                                                    <li class="uk-nav-divider"></li>
+                                                    <li><a href="#">Separated item</a></li>
+                                                </ul>
+                                            </div>
+
+                                        </li>
+                                    </ul>
+
+                                    <div class="uk-navbar-flip">
+
+                                        <ul class="uk-navbar-nav">
+                                            <li class="uk-parent" data-uk-dropdown="" aria-haspopup="true" aria-expanded="false">
+                                                <a href="">Parent</a>
+
+                                                <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-top" style="top: -218px; left: -127px;">
+                                                    <ul class="uk-nav uk-nav-navbar">
+                                                        <li><a href="#">Item</a></li>
+                                                        <li><a href="#">Another item</a></li>
+                                                        <li class="uk-nav-header">Header</li>
+                                                        <li><a href="#">Item</a></li>
+                                                        <li><a href="#">Another item</a></li>
+                                                        <li class="uk-nav-divider"></li>
+                                                        <li><a href="#">Separated item</a></li>
+                                                    </ul>
+                                                </div>
+
+                                            </li>
+                                            <li class="uk-hidden-small"><a href="">Item</a></li>
+                                            <li class="uk-active"><a href="">Active</a></li>
+                                        </ul>
+
+                                    </div>
+
+                                    <div class="uk-navbar-content uk-navbar-center">Center</div>
+
+                                </nav>
+ </div>
+ <nav class="uk-navbar">
+
+                                    <a href="#" class="uk-navbar-toggle"></a>
+
+                                    <div class="uk-navbar-flip">
+
+                                        <a href="" class="uk-navbar-toggle uk-navbar-toggle-alt"></a>
+
+                                    </div>
+</nav>
+<h2 id="responsive-visibility"><a href="#responsive-visibility" class="uk-link-reset">响应式可见性</a></h2>
+<p>要隐藏或显示导航栏中的某些项目，只需添加 <a href="#" title="Utility component">效果组件</a> 中的响应式可见性类。这是非常方便的，比如你想在移动设备中使用一个拨动器来触发导航。</p>
+<nav class="uk-navbar">
+
+                                <ul class="uk-navbar-nav uk-hidden-small">
+                                    <li class="uk-active"><a href="">Active</a></li>
+                                    <li><a href="">Item</a></li>
+                                    <li class="uk-parent" data-uk-dropdown="">
+                                        <a href="">Parent</a>
+
+                                        <div class="uk-dropdown uk-dropdown-navbar">
+                                            <ul class="uk-nav uk-nav-navbar">
+                                                <li><a href="#">Item</a></li>
+                                                <li><a href="#">Another item</a></li>
+                                                <li class="uk-nav-header">Header</li>
+                                                <li><a href="#">Item</a></li>
+                                                <li><a href="#">Another item</a></li>
+                                                <li class="uk-nav-divider"></li>
+                                                <li><a href="#">Separated item</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </li>
+                                </ul>
+
+                                <a href="#offcanvas-10" class="op uk-navbar-toggle uk-visible-small" data-uk-offcanvas=""></a>
+
+                                <div class="uk-navbar-flip">
+
+                                    <a href="" class="uk-navbar-toggle uk-navbar-toggle-alt uk-visible-small"></a>
+
+                                    <ul class="uk-navbar-nav uk-hidden-small">
+                                        <li class="uk-parent" data-uk-dropdown="">
+                                            <a href="">Parent</a>
+
+                                            <div class="uk-dropdown uk-dropdown-navbar">
+                                                <ul class="uk-nav uk-nav-navbar">
+                                                    <li><a href="#">Item</a></li>
+                                                    <li><a href="#">Another item</a></li>
+                                                    <li class="uk-nav-header">Header</li>
+                                                    <li><a href="#">Item</a></li>
+                                                    <li><a href="#">Another item</a></li>
+                                                    <li class="uk-nav-divider"></li>
+                                                    <li><a href="#">Separated item</a></li>
+                                                </ul>
+                                            </div>
+
+                                        </li>
+                                        <li><a href="">Item</a></li>
+                                        <li class="uk-active"><a href="">Active</a></li>
+                                    </ul>
+
+                                </div>
+</nav>
+<div id="offcanvas-1" style="display:none" class="opo uk-offcanvas uk-active" aria-hidden="false">
+
+                                <div class="uk-offcanvas-bar uk-offcanvas-bar-show">
+
+                                    <div class="uk-panel">Lorem ipsum dolor sit amet, <a href="#">consetetur</a> sadipscing elitr.</div>
+
+                                </div>
+  </div>
+
+          <h2 id="modifiers"><a href="#modifiers" class="uk-link-reset">修饰</a></h2>
+          <p>为了以不同的风格显示导航栏，只需添加修饰类。这些修饰类可以相互组合使用。</p>
+          <!-- 附着式的导航栏 -->
+          <h3>附着式的导航栏</h3>
+          <p>添加 <code>.uk-navbar-attached</code> 类来优化附到视图顶部的导航栏样式。比如移除圆角。</p>
+          <nav class="uk-navbar uk-navbar-attached">
+
+                                        <ul class="uk-navbar-nav">
+                                            <li class="uk-active"><a href="">Active</a></li>
+                                            <li><a href="">Item</a></li>
+                                            <li class="uk-parent" data-uk-dropdown="" aria-haspopup="true" aria-expanded="false">
+                                                <a href="">Parent</a>
+
+                                                <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-top" style="top: -218px; left: 0px;">
+                                                    <ul class="uk-nav uk-nav-navbar">
+                                                        <li><a href="#">Item</a></li>
+                                                        <li><a href="#">Another item</a></li>
+                                                        <li class="uk-nav-header">Header</li>
+                                                        <li><a href="#">Item</a></li>
+                                                        <li><a href="#">Another item</a></li>
+                                                        <li class="uk-nav-divider"></li>
+                                                        <li><a href="#">Separated item</a></li>
+                                                    </ul>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+
+                                        <div class="uk-navbar-flip">
+
+                                            <ul class="uk-navbar-nav">
+                                                <li class="uk-parent" data-uk-dropdown="">
+                                                    <a href="">Parent</a>
+
+                                                    <div class="uk-dropdown uk-dropdown-navbar">
+                                                        <ul class="uk-nav uk-nav-navbar">
+                                                            <li><a href="#">Item</a></li>
+                                                            <li><a href="#">Another item</a></li>
+                                                            <li class="uk-nav-header">Header</li>
+                                                            <li><a href="#">Item</a></li>
+                                                            <li><a href="#">Another item</a></li>
+                                                            <li class="uk-nav-divider"></li>
+                                                            <li><a href="#">Separated item</a></li>
+                                                        </ul>
+                                                    </div>
+
+                                                </li>
+                                                <li><a href="">Item</a></li>
+                                                <li class="uk-active"><a href="">Active</a></li>
+                                            </ul>
+
+                                        </div>
+         </nav>
+         <!-- 带有下拉菜单的导航栏 -->
+         <h2 id="navbar-with-dropdowns"><a href="#navbar-with-dropdowns" class="uk-link-reset">带有下拉菜单的导航栏</a></h2>
+         <nav class="uk-navbar">
+
+                                <ul class="uk-navbar-nav">
+                                    <li class="uk-active"><a href="">Active</a></li>
+                                    <li><a href="">Item</a></li>
+                                    <li class="uk-parent" data-uk-dropdown="" aria-haspopup="true" aria-expanded="false">
+                                        <a href="">Parent <i class="uk-icon-caret-down"></i></a>
+
+                                        <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom" style="top: 40px; left: 0px;">
+                                            <ul class="uk-nav uk-nav-navbar">
+                                                <li><a href="#">Item</a></li>
+                                                <li><a href="#">Another item</a></li>
+                                                <li class="uk-nav-header">Header</li>
+                                                <li><a href="#">Item</a></li>
+                                                <li><a href="#">Another item</a></li>
+                                                <li class="uk-nav-divider"></li>
+                                                <li><a href="#">Separated item</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </li>
+                                </ul>
+             </nav>
+
+             <article class="uk-article">
+
+                            <h1 class="uk-article-title">二级导航</h1>
+
+                            <p class="uk-article-lead">为二级导航设置不同的样式风格</p>
+
+                            <h2 id="usage"><a href="#usage" class="uk-link-reset">用法</a></h2>
+
+                            <p>使用以下类名来应用这个组件。对齐一个二级导航，比如水平居中，你可以使用 <a href="flex.html">Flex 组件</a>。</p>
+
+                            <div class="uk-overflow-container">
+                                <table class="uk-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Class</th>
+                                            <th>描述</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>.uk-subnav</code></td>
+                                            <td>添加此类名到 <code>&lt;ul&gt;</code> 元素中，并在列表内嵌 <code>&lt;a&gt;</code> 元素。</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>.uk-active</code></td>
+                                            <td>为列表条目添加此类名，使其呈现选中状态。</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>.uk-disabled</code></td>
+                                            <td>为列表条目添加此类名，使其呈现禁用状态。</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h3 class="tm-article-subtitle">Example</h3>
+
+                            <ul class="uk-subnav">
+                                <li class="uk-active"><a href="#">Item</a></li>
+                                <li><a href="#">Item</a></li>
+                                <li><a href="#">Item</a></li>
+                                <li class="uk-disabled"><a href="#">Disabled</a></li>
+                            </ul>
+
+                            <h3 class="tm-article-subtitle">Markup</h3>
+
+<pre><code class="xml"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"uk-subnav"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"uk-active"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>...<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>...<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"uk-disabled"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>...<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span></code></pre>
+
+                            <hr class="uk-article-divider">
+
+                            <h2 id="modifiers"><a href="#modifiers" class="uk-link-reset">修饰</a></h2>
+
+                            <h3>二级导航的分隔线</h3>
+
+                            <p>添加 <code>.uk-subnav-line</code> 类名，用线条将菜单条目分隔开。</p>
+
+                            <h4 class="tm-article-subtitle">Example</h4>
+
+                            <ul class="uk-subnav uk-subnav-line">
+                                <li class="uk-active"><a href="#">Item</a></li>
+                                <li><a href="#">Item</a></li>
+                                <li><a href="#">Item</a></li>
+                                <li class="uk-disabled"><a href="#">Disabled</a></li>
+                            </ul>
+
+                            <h3 class="tm-article-subtitle">Markup</h3>
+
+<pre><code class="xml"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"uk-subnav uk-subnav-line"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span>...<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span></code></pre>
+
+                            <hr class="uk-article-divider">
+
+                            <h3>二级导航弹丸</h3>
+
+                            <p>添加 <code>.uk-subnav-pill</code> 类名，使选中状态的菜单条目拥有背景色。只需为菜单条目添加<code>.uk-active</code> 类名，就能让它呈现选中的状态。</p>
+
+                            <h4 class="tm-article-subtitle">Example</h4>
+
+                            <ul class="uk-subnav uk-subnav-pill">
+                                <li class="uk-active"><a href="#">Item</a></li>
+                                <li><a href="#">Item</a></li>
+                                <li><a href="#">Item</a></li>
+                                <li class="uk-disabled"><a href="#">Disabled</a></li>
+                            </ul>
+
+                            <h3 class="tm-article-subtitle">Markup</h3>
+
+<pre><code class="xml"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"uk-subnav uk-subnav-pill"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"uk-active"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span></code></pre>
+
+                            <hr class="uk-article-divider">
+
+                            <h2 id="subnav-with-dropdowns"><a href="#subnav-with-dropdowns" class="uk-link-reset">带下拉菜单的二级导航</a></h2>
+
+                            <p>这个例子展示了如何使用带有 <a href="">下拉菜单</a> 的二级导航。</p>
+
+                            <h4 class="tm-article-subtitle">Example</h4>
+
+                            <ul class="uk-subnav uk-subnav-pill">
+                                <li class="uk-active"><a href="#">Active</a></li>
+                                <li><a href="#">Item</a></li>
+                                <li class="uk-disabled"><a href="#">Disabled</a></li>
+                                <li data-uk-dropdown="{mode:'click'}" aria-haspopup="true" aria-expanded="false" class="">
+                                    <a href="#">More <i class="uk-icon-caret-down"></i></a>
+                                    <div class="uk-dropdown uk-dropdown-small uk-dropdown-bottom" style="top: 26px; left: 0px;">
+                                        <ul class="uk-nav uk-nav-dropdown">
+                                            <li><a href="#">Item</a></li>
+                                            <li><a href="#">Another item</a></li>
+                                            <li class="uk-nav-header">Header</li>
+                                            <li><a href="#">Item</a></li>
+                                            <li><a href="#">Another item</a></li>
+                                            <li class="uk-nav-divider"></li>
+                                            <li><a href="#">Separated item</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <h4 class="tm-article-subtitle">Markup</h4>
+
+<pre><code class="xml"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"uk-subnav"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>...<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+
+    <span class="comment">&lt;!-- 这是启用JavaScript的容器 --&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">data-uk-dropdown</span>=<span class="value">"{mode:'click'}"</span>&gt;</span>
+
+        <span class="comment">&lt;!-- 这是拨动下拉菜单的导航项 --&gt;</span>
+        <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>...<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+
+        <span class="comment">&lt;!-- 这是下拉菜单 --&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"uk-dropdown uk-dropdown-small"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"uk-nav uk-nav-dropdown"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>...<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span></code></pre>
+
+                        </article>
+<!-- 面包屑/Breadcrumb -->
+        <article class="uk-article">
+
+        <h1 class="uk-article-title">面包屑/Breadcrumb</h1>
+
+        <p class="uk-article-lead">创建面包屑导航，显示用户在网站中的位置。</p>
+
+        <h2 id="usage"><a href="#usage" class="uk-link-reset">用法</a></h2>
+
+        <p>面包屑组件由并排排列的链接和链接与链接直接的间隔组成。</p>
+
+        <div class="uk-overflow-container">
+        <table class="uk-table">
+        <thead>
+        <tr>
+        <th>类 Class</th>
+        <th>描述 Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td><code>.uk-breadcrumb</code></td>
+        <td>在<code>&lt;ul&gt;</code>元素中添加这个类定义面包屑组件。使用<code>&lt;a&gt;</code>元素作为列表中的面包屑项目。</td>
+        </tr>
+        <tr>
+        <td><code>.uk-active</code></td>
+        <td>在列表项中添加这个类，对其中一个应用一个选中的状态，并且使用<code>&lt;span&gt;</code>替代<code>&lt;a&gt;</code>元素即可。</td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
+
+        <p>使用一个
+        <code>&lt;span&gt;</code>替代<code>&lt;a&gt;</code>元素，用来禁用某个面包屑项目。</p>
+
+        <h3 class="tm-article-subtitle">示例</h3>
+
+        <ul class="uk-breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><span>Category</span></li>
+        <li class="uk-active"><span>Post</span></li>
+        </ul>
+
+        <h3 class="tm-article-subtitle">Code</h3>
+
+        <pre><code class="xml"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"uk-breadcrumb"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>...<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>...<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>...<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"uk-active"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>...<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></code></pre>
+
+        </article>
+
+        <article class="uk-article">
+
+                            <h1 class="uk-article-title">分页</h1>
+
+                            <p class="uk-article-lead">轻松创建一个美观的分页导航来浏览网页。</p>
+
+                            <h2>用法</h2>
+
+                            <p>分页组件由类似按钮风格的链接并排排列组成。</p>
+
+                            <table class="uk-table">
+                                <thead>
+                                    <tr>
+                                        <th>类</th>
+                                        <th>概述</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>.uk-pagination</code></td>
+                                        <td>将这个类添加到一个 <code>&lt;ul&gt;</code> 元素，定义分页导航组件。使用 <code>&lt;a&gt;</code> 元素作为分页导航列表中的项目。</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>.uk-active</code></td>
+                                        <td>将这个类添加到一个列表项，对其应用选中的状态，使用 <code>&lt;span&gt;</code> 替代 <code>&lt;a&gt;</code> 元素。</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>.uk-disabled</code></td>
+                                        <td>将这个类添加到一个列表项，对其应用禁用状态，使用 <code>&lt;span&gt;</code> 替代 <code>&lt;a&gt;</code> 元素。</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <p>要应用一个无样式的省略号，只需使用 <code>&lt;span&gt;</code> 来替代 <code>&lt;a&gt;</code> 元素。</p>
+
+                            <h3 class="tm-article-subtitle">示例</h3>
+
+                            <ul class="uk-pagination">
+                                <li class="uk-disabled"><span><i class="uk-icon-angle-double-left"></i></span></li>
+                                <li class="uk-active"><span>1</span></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><span>...</span></li>
+                                <li><a href="#">20</a></li>
+                                <li><a href="#"><i class="uk-icon-angle-double-right"></i></a></li>
+                            </ul>
+
+                            <h3 class="tm-article-subtitle">Code.</h3>
+
+<pre><code class="xml"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"uk-pagination"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>...<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"uk-active"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>...<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"uk-disabled"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>...<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>...<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span></code></pre>
+
+                            <hr class="uk-article-divider">
+
+                            <h2>对齐修饰类</h2>
+
+                            <p>向页码添加 <code>.uk-pagination-left</code> 或 <code>.uk-pagination-right</code> 类使其向左或者向右对齐。</p>
+
+                            <h4 class="tm-article-subtitle">示例</h4>
+
+                            <div class="uk-grid" data-uk-grid-margin="">
+                                <div class="uk-width-medium-1-2 uk-row-first">
+
+                                    <ul class="uk-pagination uk-pagination-left">
+                                        <li><a href="#">1</a></li>
+                                        <li><span>...</span></li>
+                                        <li><a href="#">8</a></li>
+                                        <li><a href="#">9</a></li>
+                                        <li class="uk-active"><span>10</span></li>
+                                        <li><a href="#">11</a></li>
+                                        <li><a href="#">12</a></li>
+                                        <li><span>...</span></li>
+                                        <li><a href="#">20</a></li>
+                                    </ul>
+
+                                </div>
+                                <div class="uk-width-medium-1-2">
+
+                                    <ul class="uk-pagination uk-pagination-right">
+                                        <li><a href="#">1</a></li>
+                                        <li><span>...</span></li>
+                                        <li><a href="#">8</a></li>
+                                        <li><a href="#">9</a></li>
+                                        <li class="uk-active"><span>10</span></li>
+                                        <li><a href="#">11</a></li>
+                                        <li><a href="#">12</a></li>
+                                        <li><span>...</span></li>
+                                        <li><a href="#">20</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                            <h3 class="tm-article-subtitle">Code.</h3>
+
+                            <div class="uk-grid" data-uk-grid-margin="">
+                                <div class="uk-width-medium-1-2 uk-row-first">
+<pre><code class="xml"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"uk-pagination uk-pagination-left"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span>...<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span></code></pre>
+                                </div>
+                                <div class="uk-width-medium-1-2">
+<pre><code class="xml"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"uk-pagination uk-pagination-right"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span>...<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span></code></pre>
+                                </div>
+                            </div>
+
+                            <hr class="uk-article-divider">
+
+                            <h2>上一页与下一页</h2>
+
+                            <p>创建一个简单上一页和下一页分页导航是非常容易的。只需添加 <code>.uk-pagination-previous</code> 或 <code>.uk-pagination-next</code> 类到一个 <code>&lt;li&gt;</code> 元素，其向左或者向右对齐。</p>
+
+                            <h4 class="tm-article-subtitle">示例</h4>
+
+                            <ul class="uk-pagination">
+                                <li class="uk-pagination-previous"><a href="#"><i class="uk-icon-angle-double-left"></i> 上一页</a></li>
+                                <li class="uk-pagination-next"><a href="#">下一页 <i class="uk-icon-angle-double-right"></i></a></li>
+                            </ul>
+
+                            <h4 class="tm-article-subtitle">Code.</h4>
+
+<pre><code class="xml"><span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"uk-pagination-previous"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>...<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"uk-pagination-next"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>...<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></pre>
+
+                            <hr class="uk-article-divider">
+
+                            <h2>带图标的分页导航</h2>
+
+                            <p>使用 <a href="icon.html">图标组件</a> 中的图标增强分页导航效果。添加一个 <code>.uk-icon-*</code> 类到分页导航链接里的 <code>&lt;i&gt;</code> 或 <code>&lt;span&gt;</code> 元素中。</p>
+
+                            <h3 class="tm-article-subtitle">示例</h3>
+
+                            <ul class="uk-pagination">
+                                <li><a href="#"><i class="uk-icon-angle-double-left"></i></a></li>
+                                <li class="uk-active"><span><i class="uk-icon-angle-double-left"></i></span></li>
+                                <li class="uk-disabled"><span><i class="uk-icon-angle-double-left"></i></span></li>
+                                <li><span>...</span></li>
+                                <li class="uk-disabled"><span><i class="uk-icon-angle-double-right"></i></span></li>
+                                <li class="uk-active"><span><i class="uk-icon-angle-double-right"></i></span></li>
+                                <li><a href="#"><i class="uk-icon-angle-double-right"></i></a></li>
+                            </ul>
+
+                            <h3 class="tm-article-subtitle">Code.</h3>
+
+<pre><code class="xml"><span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"uk-icon-angle-double-left"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"uk-icon-angle-double-right"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></pre>
+
+
+                            <hr class="uk-article-divider">
+
+                            <h2 id="javascript"><a href="#javascript" class="uk-link-reset">JavaScript</a></h2>
+
+                            <p>你可以应用附加组件中的<a href="pagination-js.html">分页组件</a>来自动计算页码，例如在由Ajax支持的列表视图中触发一个事件，动态地加载新的列表项。</p>
+
+                        </article>
+
+
+
+	<script type="text/javascript">
+	$('.xc').on('click',function(){
+$('.xa').css('display','block')
+
+	})
+	$('.op').on('click',function(){
+$('.opo').css('display','inline-block')
+	})
+
+$('#offcanvas-1').on('click',function(){
+
+	$(this).css('display','none')
+})
+$('.uk-parent').on('click',function(){
+$(this).find('div').css('height','auto')
+})
+
+$('.ppopl').on('click',function(){
+	$(this).next('div').toggle();
+
+})
+	$('.opo').on('click',function(){
+		$(this).css('display','none')
+	})
+	
+
+	</script>
+</body>
+</html>
